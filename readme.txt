@@ -1,9 +1,9 @@
 === Enable Contributor Uploads ===
-Contributors: roadwarriorwp
+Contributors: roadwarriorwp, alh0319, stevejonesdev
 Donate link: http://roadwarriorcreative.com/donate
 Tags: user roles, capabilities, contributor, upload media, enable uploads
 Requires at least: 3.0.1
-Tested up to: 4.4
+Tested up to: 4.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,8 +37,8 @@ We rcommend you check out other plugins in the WordPress repository.  At this ti
 == Screenshots ==
 
 1. This screen shot description corresponds to screenshot-1.png, which shows the addition on the normal Media Upload Button to a new post.  Note the Media Library is also now in the sidebar.
-2. Screenshot-2.png shows that contributors can upload media.
-3. Screenshot-3.png shows that contributors can view but not delete media in the Media Library.
+2. screenshot-2.png shows that contributors can upload media.
+3. screenshot-3.png shows that contributors can view but not delete media in the Media Library.
 
 == Changelog ==
 
