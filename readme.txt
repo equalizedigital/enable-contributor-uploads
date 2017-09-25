@@ -32,7 +32,7 @@ No. Contributors will be able to view other media items in the library and selec
 
 = What if I want to edit more capabilities or roles? =
 
-We rcommend you check out other plugins in the WordPress repository.  At this time we will not be adding additional features to this plugin.
+We recommend you check out other plugins in the WordPress repository.  At this time we will not be adding additional features to this plugin.
 
 == Screenshots ==
 
