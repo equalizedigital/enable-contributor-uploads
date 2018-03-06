@@ -2,7 +2,7 @@
 /*
 Plugin Name: Enable Contributor Uploads
 Description: Allows users with the contributor role to upload images.
-Version:     1.0
+Version:     1.1
 Author:      Road Warrior Creative
 Author URI:  http://www.roadwarriorcreative.com
 License:     GPL2
