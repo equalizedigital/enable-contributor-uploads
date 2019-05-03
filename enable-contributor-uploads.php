@@ -9,11 +9,23 @@ License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-//* Add upload capability to contributors
-add_action('admin_init', 'rwc_allow_contributor_uploads');
-function rwc_allow_contributor_uploads() {
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+// Add upload capability to contributors on plugin install
+function rwc_allow_contributor_uploads_install() {
 	$contributor = get_role('contributor');
 	$contributor->add_cap('upload_files');
 }
+register_activation_hook( __FILE__, 'rwc_allow_contributor_uploads_install' );
+
+// Remove upload capabilitys on plugin uninstall
+function rwc_allow_contributor_uploads_uninstall() {
+	$contributor = get_role('contributor');
+	$contributor->remove_cap('upload_files');
+}
+register_uninstall_hook(__FILE__, 'rwc_allow_contributor_uploads_uninstall');
 
 //* That's all!
