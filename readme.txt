@@ -45,3 +45,6 @@ We recommend you check out other plugins in the WordPress repository.  At this t
 
 = 1.0 =
 * This is version 1 - everything is new and shiny!
+
+= 1.1 =
+* Update upload capability to be added and removed from contributors only on plugin activation and deactivation.

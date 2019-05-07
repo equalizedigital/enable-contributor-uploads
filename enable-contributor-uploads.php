@@ -22,10 +22,10 @@ function rwc_allow_contributor_uploads_install() {
 register_activation_hook( __FILE__, 'rwc_allow_contributor_uploads_install' );
 
 // Remove upload capabilitys on plugin uninstall
-function rwc_allow_contributor_uploads_uninstall() {
+function rwc_allow_contributor_uploads_deactivation() {
 	$contributor = get_role('contributor');
 	$contributor->remove_cap('upload_files');
 }
-register_uninstall_hook(__FILE__, 'rwc_allow_contributor_uploads_uninstall');
+register_deactivation_hook(__FILE__, 'rwc_allow_contributor_uploads_deactivation');
 
 //* That's all!
