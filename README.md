@@ -1,9 +1,8 @@
 [![CS](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/cs.yml/badge.svg)](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/cs.yml)
-[![Lint](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/lint.yml/badge.svg)](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/lint.yml)
 [![Security](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/security.yml/badge.svg)](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/security.yml)
 [![Test](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/phpunit.yml/badge.svg)](https://github.com/equalizedigital/enable-contributor-uploads/actions/workflows/phpunit.yml)
 
-# Equalize Digital Enable Contributor Uploads
+# Enable Contributor Uploads
 
 ## What is this?
 Easy plugin which adds the capability for contributors to upload images to their blog posts.
