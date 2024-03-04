@@ -1,10 +1,9 @@
 === Enable Contributor Uploads ===
-Contributors: roadwarriorwp, alh0319, stevejonesdev
-Donate link: http://roadwarriorcreative.com/donate
+Contributors: equalizedigital, alh0319, stevejonesdev
 Tags: user roles, capabilities, contributor, upload media, enable uploads
-Requires at least: 3.0.1
-Tested up to: 5.4
-Stable tag: 1.1
+Requires at least: 6.2
+Tested up to: 6.4.3
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,8 +42,11 @@ We recommend you check out other plugins in the WordPress repository.  At this t
 
 == Changelog ==
 
-= 1.0 =
-* This is version 1 - everything is new and shiny!
+= 1.2.0 =
 
-= 1.1 =
+
+= 1.1.0 =
 * Update upload capability to be added and removed from contributors only on plugin activation and deactivation.
+
+= 1.0.0 =
+* This is version 1 - everything is new and shiny!

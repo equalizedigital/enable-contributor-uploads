@@ -1,6 +1,19 @@
 # Exclude these files from the git repo
- 
+.sass-cache/
+config.codekit3
+edac_log.txt
+#composer.lock
+package-lock.json
+
 # Hidden system files
 *.DS_Store
 *[Tt]humbs.db
 *.Trashes
+vendor
+node_modules
+build
+dist
+.env
+
+# PHPUnit
+.phpunit.result.cache
