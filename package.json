@@ -14,7 +14,8 @@
   "files": [
     "LICENSE.txt",
     "readme.txt",
-    "enable-contributor-uploads.php"
+    "enable-contributor-uploads.php",
+    "inc"
   ],
   "devDependencies": {
     "@wordpress/scripts": "^26.5.0",
