@@ -29,7 +29,6 @@ class Plugin {
 	public function init() {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
-		add_action( 'init', array( $this, 'load_textdomain' ) );
 	}
 
 	/**
@@ -54,13 +53,6 @@ class Plugin {
 		if ( null !== $contributor ) {
 			$contributor->remove_cap( 'upload_files' );
 		}
-	}
-
-	/**
-	 * Load the plugin text domain for translation.
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'enable-contributor-uploads', false, basename( __DIR__ ) . '/languages' );
 	}
 
 	/**
