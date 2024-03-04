@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file for local dev testing.
  *
- * @package Accessibility_Checker
+ * @package Enable_Contributor_Uploads
  */
 
 /**
