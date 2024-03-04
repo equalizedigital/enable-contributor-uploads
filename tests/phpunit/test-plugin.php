@@ -40,6 +40,7 @@ class EDECU_Plugin_Test extends WP_UnitTestCase {
 	 */
 	public function test_init() {
 		$this->plugin->init();
+		$this->assertNotNull( $this->plugin, 'Plugin should be initialized.' );
 	}
 
 	/**
