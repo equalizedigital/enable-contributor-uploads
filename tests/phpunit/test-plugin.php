@@ -22,7 +22,7 @@ class EDECU_Plugin_Test extends WP_UnitTestCase {
 	/**
 	 * Test setup.
 	 */
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->plugin = new Plugin();
 	}
@@ -30,7 +30,7 @@ class EDECU_Plugin_Test extends WP_UnitTestCase {
 	/**
 	 * Test teardown.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 		unset( $this->plugin );
 	}
