@@ -25,12 +25,17 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// Plugin Root File.
+if ( ! defined( 'EDECU_PLUGIN_FILE' ) ) {
+	define( 'EDECU_PLUGIN_FILE', __FILE__ );
+}
+
 // Autoloads classes from the 'inc' directory.
 if ( file_exists( plugin_dir_path( __FILE__ ) . 'vendor/autoload.php' ) ) {
 	include_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 }
 
 // Initialize the plugin.
-if ( class_exists( 'EDAC\Inc\Plugin' ) ) {
+if ( class_exists( 'EDECU\Inc\Plugin' ) ) {
 	( new Plugin() )->init();
 }

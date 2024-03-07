@@ -27,8 +27,8 @@ class Plugin {
 	 * Registers activation and deactivation hooks, and adds action to load text domain.
 	 */
 	public function init() {
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
+		register_activation_hook( EDECU_PLUGIN_FILE, array( $this, 'activate' ) );
+		register_deactivation_hook( EDECU_PLUGIN_FILE, array( $this, 'deactivate' ) );
 	}
 
 	/**
