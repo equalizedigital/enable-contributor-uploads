@@ -8,9 +8,44 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+
     steps:
-      - uses: mshick/add-pr-comment@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          message: |
-            **Test on Playground**
-            [Test this pull request on the Playground](https://playground.wordpress.net/#{"landingPage":"/wp-admin/index.php","features":{"networking":true},"steps":[{"step":"login","username":"admin","password":"password"},{"step":"installPlugin","pluginZipFile":{"resource":"url","url":"https://downloads.wordpress.org/plugin/user-switching.latest-stable.zip"},"options":{"activate":true}},{"step":"installPlugin","pluginZipFile":{"resource":"url","url":"https://downloads.wordpress.org/plugin/user-role-editor.latest-stable.zip"},"options":{"activate":true}},{"step":"installPlugin","pluginZipFile":{"resource":"url","url":"https://bypass-cors.altha.workers.dev/${{ github.server_url }}/${{ github.repository }}/archive/${{ github.sha }}.zip"},"options":{"activate":true}}]})
+          node-version: '14'  # specify your Node.js version
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'  # specify your PHP version
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev && composer dump-autoload --no-dev -o
+
+      - name: Run build script
+        run: npm run dist
+
+      - name: Create zip file
+        run: zip -r plugin.zip dist
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: plugin-zip
+          path: plugin.zip
+
+      - name: Generate Playground comment
+        run: |
+          PLUGIN_URL="https://bypass-cors.altha.workers.dev/${{ github.server_url }}/${{ github.repository }}/suites/${{ github.run_id }}/artifact.zip"
+          COMMENT="**Test on Playground**\n[Test this pull request on the Playground](https://playground.wordpress.net/#{{\"landingPage\":\"/wp-admin/index.php\",\"features\":{\"networking\":true},\"steps\":[{\"step\":\"login\",\"username\":\"admin\",\"password\":\"password\"},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"${PLUGIN_URL}\"},\"options\":{\"activate\":true}},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"https://downloads.wordpress.org/plugin/user-switching.latest-stable.zip\"},\"options\":{\"activate\":true}},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"https://downloads.wordpress.org/plugin/user-role-editor.latest-stable.zip\"},\"options\":{\"activate\":true}}]})"
+
+          echo "${COMMENT}" > comment.md
+
+      - name: Add PR comment
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: ${{ steps.generate-playground-comment.outputs.comment }}
