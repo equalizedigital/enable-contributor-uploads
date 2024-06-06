@@ -39,13 +39,13 @@ jobs:
           path: plugin.zip
 
       - name: Generate Playground comment
+        id: generate-comment
         run: |
-          PLUGIN_URL="https://bypass-cors.altha.workers.dev/${{ github.server_url }}/${{ github.repository }}/suites/${{ github.run_id }}/artifact.zip"
+          PLUGIN_URL="https://bypass-cors.altha.workers.dev/${{ github.server_url }}/${{ github.repository }}/suites/${{ github.run_id }}/artifacts/plugin-zip"
           COMMENT="**Test on Playground**\n[Test this pull request on the Playground](https://playground.wordpress.net/#{{\"landingPage\":\"/wp-admin/index.php\",\"features\":{\"networking\":true},\"steps\":[{\"step\":\"login\",\"username\":\"admin\",\"password\":\"password\"},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"${PLUGIN_URL}\"},\"options\":{\"activate\":true}},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"https://downloads.wordpress.org/plugin/user-switching.latest-stable.zip\"},\"options\":{\"activate\":true}},{\"step\":\"installPlugin\",\"pluginZipFile\":{\"resource\":\"url\",\"url\":\"https://downloads.wordpress.org/plugin/user-role-editor.latest-stable.zip\"},\"options\":{\"activate\":true}}]})"
-
           echo "${COMMENT}" > comment.md
 
       - name: Add PR comment
         uses: mshick/add-pr-comment@v2
         with:
-          message: ${{ steps.generate-playground-comment.outputs.comment }}
+          message: ${{ steps.generate-comment.outputs.comment }}
