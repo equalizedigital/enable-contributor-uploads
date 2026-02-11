@@ -1,5 +1,5 @@
 === Enable Contributor Uploads ===
-Contributors: roadwarriorwp, alh0319, stevejonesdev
+Contributors: equalizedigital, roadwarriorwp, alh0319, stevejonesdev
 Donate link: http://roadwarriorcreative.com/donate
 Tags: user roles, capabilities, contributor, upload media, enable uploads
 Requires at least: 3.0.1
