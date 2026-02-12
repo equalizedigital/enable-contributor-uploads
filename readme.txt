@@ -2,9 +2,9 @@
 Contributors: equalizedigital, roadwarriorwp, alh0319, stevejonesdev
 Donate link: http://roadwarriorcreative.com/donate
 Tags: user roles, capabilities, contributor, upload media, enable uploads
-Requires at least: 3.0.1
-Tested up to: 5.4
-Stable tag: 1.1
+Requires at least: 6.7
+Tested up to: 6.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ No. This plugin only modifies the media upload abilities of users with the contr
 
 = Will Contributors be able to delete my media? =
 
-No. Contributors will be able to view other media items in the library and select them for upload, but they will not be able to delete any media items - including ones that thay themselves have uploaded.
+No. Contributors will be able to view other media items in the library and select them for upload, but they will not be able to delete any media items - including ones that they themselves have uploaded.
 
 = What if I want to edit more capabilities or roles? =
 
@@ -43,8 +43,16 @@ We recommend you check out other plugins in the WordPress repository.  At this t
 
 == Changelog ==
 
-= 1.0 =
-* This is version 1 - everything is new and shiny!
+= 1.2.0 =
+* Added: PHPDoc blocks to all functions for better code documentation.
+* Added: Null checks to prevent fatal errors if contributor role doesn't exist.
+* Changed: Function prefix from rwc_ to edecu_ for consistency with plugin branding.
+* Fixed: Typo in FAQ section.
+* Updated: Tested up to WordPress 6.9.
+* Updated: Minimum required WordPress version to 6.7.
 
-= 1.1 =
-* Update upload capability to be added and removed from contributors only on plugin activation and deactivation.
+= 1.1.0 =
+* Updated: upload capability to be added and removed from contributors only on plugin activation and deactivation.
+
+= 1.0.0 =
+* This is version 1 - everything is new and shiny!
