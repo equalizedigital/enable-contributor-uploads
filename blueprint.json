@@ -1,5 +1,4 @@
 {
-	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
 	"landingPage": "/wp-admin/plugins.php",
 	"preferredVersions": {
 		"php": "8.0",
@@ -8,25 +7,11 @@
 	"phpExtensionBundles": [
 		"kitchen-sink"
 	],
-	"features": {
-		"networking": true
-	},
 	"steps": [
 		{
 			"step": "login",
 			"username": "admin",
 			"password": "password"
-		},
-		{
-			"step": "installPlugin",
-			"pluginZipFile": {
-				"resource": "wordpress.org/plugins",
-				"slug": "enable-contributor-uploads"
-			}
-		},
-		{
-			"step": "activatePlugin",
-			"pluginPath": "enable-contributor-uploads/enable-contributor-uploads.php"
 		}
 	]
 }
